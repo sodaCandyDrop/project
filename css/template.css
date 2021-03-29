@@ -1,0 +1,843 @@
+@charset "utf-8";
+/*공통 CSS*/
+/*클리어픽스(clearfix) : 플롯해제 클래스*/
+.cf:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/*모든 환경에 보이지는 않지만, 반드시 입력 해야하는 html태그가 존재함.
+그 해당 요소를 숨기기 위해 클래스 제작*/
+.blind {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+/*지정 너비로만 사용하게 하는 클래스*/
+.container {
+    width: 90%;
+    max-width: 1132px;
+    margin: 0 auto;
+}
+/*제목스타일*/
+.sec_title {
+    font-size: 42px;
+    /*color: #3f51b5;*/
+    color: #4D7343;
+}
+/*구분선 영역 스타일*/
+.divider {
+    max-width: 1132px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background: #eee;
+}
+.m_divider {
+    width: 20px;
+    margin: 0 auto;
+    margin-top: 80px;
+    /*background: #3f51b5;*/
+    background: #4D7343;
+}
+
+
+/*********************************************/
+
+
+
+/*모바일 퍼스트=모바일용 미디어쿼리 없음(공통스타일로 사용)*/
+/*1. 헤더영역 CSS*/
+.header {
+    padding: 18px 5%;
+    /*위치기준값*/
+    position: relative;
+}
+/*로고*/
+.header .logo {
+    /*플롯*/
+    float: left;    
+}
+.header .logo a {
+    font-size: 26px;
+    /*color: #3f51b5;*/
+    color: #4D7343;
+}
+/*GNB메뉴*/
+.header nav {}
+/*모바일 영역 gnb메뉴 = 스크립트 코딩 후 햄버거 클릭시 나오는 메뉴*/
+.header .gnb {
+    /*스크립트 연동을 위해 로딩시 가려줌*/
+    display: none;
+    width: 100%;
+    /*포지션*/
+    position: absolute;
+    left: 0;
+    top: 100%;
+    /*background: #3f51b5;*/
+    background: #4D7343;
+    
+    z-index: 1000;
+}
+.header .gnb li {
+    /*border-bottom: 1px solid #303f9f;*/
+    border-bottom: 1px solid #A9D962;
+}
+.header .gnb li a {
+    display: block;
+    font-size: 14px;
+    padding: 14px 0 14px 5%;
+    
+    color: #fff;
+}
+
+/*햄버거메뉴 CSS*/
+.header .menu_toggle_btn {
+    /*전체적인 구조 잡아줌*/
+    width: 20px;
+    margin-top: 4px;
+    cursor: pointer;
+    /*플롯, 로고 오른쪽*/
+    float: right;
+}
+/*햄버거메뉴 바CSS*/
+.header .menu_toggle_btn span {
+    display: block; /*span 원래 인라인 요소라 바꿈*/
+    width: 100%; /*원래 한줄인데 부모에서 float주면 부모따라서 20px됨*/
+    height: 2px;
+    /*background: #3f51b5;*/
+    background: #4D7343;
+}
+.header .menu_toggle_btn span:nth-child(2) {
+    /*두번째 애한테 위아래 마진주면 알아서 세줄 됨*/
+    margin: 5px 0;
+}
+
+
+/*2. 슬라이드영역*/
+.slider .slider_img {
+    width: 100%;
+}
+
+.slider .slider_img img {
+    width: 100%;
+}
+
+
+/*3-1. 디스플레이영역*/
+.display_section {
+    margin-top: 60px;
+    text-align: center;
+}
+.display_section h2 {
+    margin-bottom: 30px;
+}
+.display_section sec_title {
+    margin-bottom: 30px;
+}
+.display_section .desc {
+    color: #616161;
+    line-height: 2;
+}
+
+/*3-2. 프로모션영역*/
+.promotion_section {
+    margin-top: 68px;
+}
+.promotion_section .promotion_list li {
+    margin-top: 50px;
+    text-align: center;
+}
+.promotion_section .promotion_list li:nth-child(1) {
+    margin-top: 0;
+}
+.promotion_section .promotion_list li img {
+    height: 52px;
+}
+.promotion_section .promotion_list li h3 {
+    margin: 30px 0 20px;
+    /*color: #3f51b5;*/
+    color: #4D7343;
+}
+.promotion_section .promotion_list li p {
+    font-size: 14px;
+    color: #616161;
+    line-height: 1.5;
+    /*font-family: 'PT Serif', serif;*/
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*3-3. 포트폴리오영역*/
+.work_section {
+    margin-top: 74px;
+}
+.work_section .sec_title {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 48px;
+}
+.work_section .work_list li {
+    /*list 구현했을 때 액자 역할 하는 것=li*/
+    width: 100%;
+}
+.work_section .work_list li a {
+    display: block;
+    /*액자 기준으로 꽉 채우게 100%*/
+    width: 100%;
+    height: 100%;
+}
+.work_section .work_list li img {
+    /*액자 퍼센트 상관없이 무조건 꽉채움*/
+    width: 100%;
+}
+
+/*3-4. 블로그영역*/
+.blog_section {
+    margin-top: 80px;
+}
+.blog_section .sec_title {
+    margin-bottom: 48px;
+    text-align: center;
+}
+.blog_section .blog_list li {
+    margin-top: 48px;
+    width: 100%;
+}
+.blog_section .blog_list li:nth-child(1) {
+    margin-top: 0;
+}
+.blog_section .blog_list li img {
+    width: 100%;
+}
+.blog_section .blog_list li time {
+    display: block;
+    font-size: 12px;
+    color: #9e9e9e;
+    margin: 10px 0;
+}
+.blog_section .blog_list li h3 {
+    color: #424242;
+    line-height: 1.6;
+    
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/*3-5. 연락처작업영역*/
+.contact_section {
+    margin-top: 100px;
+}
+.contact_section .sec_title {
+    margin-bottom: 48px;
+    text-align: center;
+}
+.contact_section .form_box .form input {
+    padding-bottom: 14px;
+    margin-bottom: 40px;
+}
+.contact_section .form_box .txta textarea {
+    height: 170px;
+}
+.contact_section .form_box .send_btn {
+    margin-top: 36px;
+    text-align: right;
+}
+.contact_section .form_box .send_btn button {
+    font-size: 12px;
+    color: #fff;
+    /*background: #3f51b5;*/
+    background: #4D7343;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px;
+    border: 0;
+    cursor: pointer;
+}
+
+/*4. 푸터영역*/
+.footer {
+    margin-top: 100px;
+}
+.footer iframe {
+    width: 100%;
+    height: 320px;
+}
+.footer p {
+    font-size: 0.75rem;
+    margin: 20px 0;
+    /*color: #3f51b5;*/
+    color: #4D7343;
+    text-align: center;
+}
+
+/*CSS3 트랜지션 애니메이션(안보이다가 보이기, 글자 위에서 아래) 효과내기 시작*/
+/*셀로판지 효과*/
+.work_section .work_list li a {
+    /*포지션 위치기준값*/
+    position: relative;
+}
+.work_section .work_list li a:before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    /*포지션*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    
+    content: "";
+    /*background: #3f51b5;*/
+    background: #4D7343;
+    opacity: 0;
+    transition: all .3s;
+}
+/*a를 호버한 이후(가상클래스 순서 바뀌면 안됨, 가상클래스 쓸때는 붙여쓰기)*/
+.work_section .work_list li a:hover:before {
+    opacity: 0.85;
+}
+
+/*정보(text) 박스영역*/
+.work_section .work_list li div {
+    /*포지션*/
+    position: absolute;
+    left: 30px;
+    top: 0;
+    
+    /*a보다 크기만 하면 됨*/
+    z-index: 200;
+    opacity: 0;
+    transition: all .3s;
+}
+/*위에서 아래로 텍스트 등장, a호버하면 div나오는거니까 순서 잘 보기...*/
+.work_section .work_list li a:hover div {
+    opacity: 1;
+    transform: translateY(30px);
+}
+.work_section .work_list li div h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.work_section .work_list li div span {
+    font-size: 11px;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/*********************************************/
+
+
+
+
+
+/*태블릿용 미디어쿼리 768px 이상*/
+@media screen and (min-width:768px){
+    .header {
+        padding: 18px 5%;
+        /*위치기준값(수정)*/
+        position: static;
+    }
+    /*로고*/
+    .header .logo {
+        /*플롯*/
+        float: left;
+    }
+    .header .logo a {
+        font-size: 26px;
+        /*color: #3f51b5;*/
+        color: #4D7343;
+    }
+    /*GNB메뉴*/
+    .header nav {}
+    /*태블릿 영역 gnb메뉴 = 로딩시 보여야 함*/
+    .header .gnb {
+        /*로딩시 보여야 함(수정)*/
+        display: block !important;
+        /*(수정)*/
+        width: auto;
+        /*위치기준값(수정)*/
+        position: static;
+        /*(수정)*/
+        background: none;
+        
+        /*플롯(추가), 위에 nav에 넣어도 상관없음!*/
+        float: right;
+        /*추가*/
+        padding-top: 6px;
+    }
+    .header .gnb li {
+        /*(수정)*/
+        border-bottom: 0;
+        margin-left: 20px;
+        
+        /*플롯(추가) 이거 쓰면 자동으로 한줄 됨*/
+        float: left;
+    }
+    .header .gnb li a {
+        display: block;
+        /*(수정)*/
+        font-size: 16px;
+        /*(수정)*/
+        padding: 0;
+        
+        color: #616161;
+    }
+    .header .gnb li a:hover {
+        /*color: #3f51b5;*/
+        color: #4D7343;
+    }
+    /*햄버거메뉴 바CSS*/
+    .header .menu_toggle_btn span {
+        /*(수정)*/
+        display: none;
+    }    
+    
+    /*3-1. 디스플레이영역*/
+    .display_section {
+        /*(수정)*/
+        margin-top: 100px;
+        text-align: center;
+    }
+    .display_section sec_title {
+        margin-bottom: 30px;
+    }
+    .display_section .desc {
+        color: #616161;
+        line-height: 2;
+    }
+    
+    /*3-2. 프로모션영역*/
+    .promotion_section {
+        /*(수정)*/
+        margin-top: 110px;
+    }
+    .promotion_section .promotion_list li {
+        /*(수정)*/
+        margin-top: 0; /*4단으로 바뀌니까 필요 x*/
+        text-align: center;
+        
+        /*추가*/
+        /*
+        768-(20*3 //4단이니까 마진은 -1)=708px
+        708/4(4단이니까)=177px
+        */
+        width: 177px;
+        /*(177/768)*100*/
+        width: 23.046875%;
+        margin-left: 20px;
+        /*(20/768)*100*/
+        margin-left: 2.604166666666667%;
+        /*플롯*/
+        float: left;
+    }
+    .promotion_section .promotion_list li:nth-child(1) {
+        margin-top: 0;
+        
+        /*추가, 안하면 플롯 깨짐*/
+        margin-left: 0;
+    }
+    .promotion_section .promotion_list li img {
+        height: 52px;
+    }
+    .promotion_section .promotion_list li h3 {
+        margin: 30px 0 20px;
+        /*color: #3f51b5;*/
+        color: #4D7343;
+    }
+    .promotion_section .promotion_list li p {
+        font-size: 14px;
+        color: #616161;
+        line-height: 1.5;
+        /*font-family: 'PT Serif', serif;*/
+    }
+    
+    /*3-3. 포트폴리오영역*/
+    .work_section {
+        /*(수정)*/
+        margin-top: 100px;
+    }
+    .work_section .sec_title {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        /*(수정)*/
+        margin-bottom: 80px;
+    }
+    .work_section .work_list li {
+        /*list 구현했을 때 액자 역할 하는 것=li*/
+        /*(수정)*/
+        width: 50%;
+        /*플롯*/
+        float: left;
+    }
+    .work_section .work_list li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .work_section .work_list li img {
+        /*액자 퍼센트 상관없이 무조건 꽉채움*/
+        width: 100%;
+    }
+    
+    /*3-4. 블로그영역*/
+    .blog_section {
+        /*(수정)*/
+        margin-top: 124px;
+    }
+    .blog_section .sec_title {
+        margin-bottom: 48px;
+        text-align: center;
+    }
+    .blog_section .blog_list li {
+        /*(수정)*/
+        margin-top: 0;
+        width: 100%;
+        /*(수정)*/
+        /*
+        768-40(3단이라 마진 20*2)
+        728/3=242.6666666666667
+        */
+        width: 242.6666666666667px;
+        /*(242.6666666666667/768)*100*/
+        width: 31.59722222222223%;
+        /*추가, 마진도 퍼센트 변환 안하면 오른쪽 공백나옴*/
+        margin-left: 20px;
+        /*(20/768)*100*/
+        margin-left: 2.604166666666667%;
+         /*플롯*/
+        float: left;
+    }
+    .blog_section .blog_list li:nth-child(1) {
+        /*추가*/        
+        margin-left: 0;
+    }
+    .blog_section .blog_list li img {
+        width: 100%;
+    }
+    .blog_section .blog_list li time {
+        display: block;
+        font-size: 12px;
+        color: #9e9e9e;
+        margin: 10px 0;
+    }
+    .blog_section .blog_list li h3 {
+        color: #424242;
+        line-height: 1.6;
+    }
+
+    /*3-5. 연락처작업영역*/
+    .contact_section {
+        /*수정*/
+        margin-top: 180px;
+    }
+    .contact_section .sec_title {
+        /*수정*/
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    /*input 요소 CSS*/
+    .contact_section .form_box .form {
+        /*name 등 부분, 왼쪽*/
+        /*768-20(2단이라 마진 1)*/
+        width: 374px;
+        /*(374/768)*100*/
+        width: 48.69791666666667%;
+        
+        margin-right: 20px;
+        /*(20/768)*100*/
+        margin-right: 2.604166666666667%;
+        /*플롯*/
+        float: left;
+    }
+    .contact_section .form_box .txta {
+        /*message 부분, 오른쪽*/
+        /*768-20(2단이라 마진 1)*/
+        width: 374px;
+        /*(374/768)*100*/
+        width: 48.69791666666667%;
+        /*플롯, 너비값 같으니 left해도 ㄱㅊ*/
+        float: right;
+    }    
+    .contact_section .form_box .form input {
+        padding-bottom: 14px;
+        margin-bottom: 40px;
+    }
+    .contact_section .form_box .txta textarea {
+        height: 170px;
+    }
+    .contact_section .form_box .send_btn {
+        margin-top: 36px;
+        text-align: right;
+    }
+    .contact_section .form_box .send_btn button {
+        font-size: 12px;
+        color: #fff;
+        /*background: #3f51b5;*/
+        background: #4D7343;
+        font-family: 'Montserrat', sans-serif;
+        padding: 15px;
+        border: 0;
+        cursor: pointer;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+    
+
+
+
+
+/*********************************************/
+
+
+
+
+/*PC용 미디어쿼리 1132px 이상*/
+@media screen and (min-width:1132px){
+    /*3-1. 디스플레이영역*/
+    .display_section {
+        /*(수정)*/
+        margin-top: 100px;
+        /*(수정)*/
+        text-align: left;
+    }
+    
+    .display_section .sec_title {
+        /*(수정)*/
+        margin-bottom: 0;
+        /*플롯*/
+        float: left;
+    }
+    .display_section .desc {
+        color: #616161;
+        line-height: 2;
+        /*플롯*/
+        float: right;
+        padding-left: 20px;
+        /*위치기준값*/
+        position: relative;
+    }
+    
+    /*데코레이션 세로선*/
+    .display_section .desc:before {
+        /*앞에 span 생긴다 생각*/
+        display: block; /*span 이니 block*/
+        content: "";
+        width: 2px;
+        height: 44px;
+        background: #e0e0e0;
+        /*포지션, 기본적으로 l0 t0 해주기*/
+        position: absolute;
+        left: 0;
+        top: 10px;
+    } 
+    
+    /*3-2. 프로모션영역*/
+    .promotion_section {
+        /*(수정)*/
+        margin-top: 110px;
+    }
+    .promotion_section .promotion_list li {
+        /*(수정)*/
+        margin-top: 0; /*4단으로 바뀌니까 필요 x*/
+        text-align: center;
+        
+        /*추가*/
+        /*
+        1132-(20*3 //4단이니까 마진은 -1)=1072px
+        1072/4(4단이니까)=268px
+        */
+        width: 268px;
+        /*(268/1132)*100*/
+        width: 23.67491166077739%;
+        margin-left: 20px;
+        /*(20/1132)*100*/
+        margin-left: 1.76678445229682%;
+        /*플롯*/
+        float: left;
+    }
+    .promotion_section .promotion_list li:nth-child(1) {
+        margin-top: 0;        
+        /*추가, 안하면 플롯 깨짐*/
+        margin-left: 0;
+    }
+    
+    /*3-3. 포트폴리오영역*/
+    .work_section {
+        /*(수정)*/
+        margin-top: 100px;
+    }
+    .work_section .sec_title {
+        /*(수정)*/
+        width: 100%;
+        margin: 0 auto;
+        /*(수정)*/
+        text-align: left;        
+        margin-bottom: 80px;
+    }
+    .work_section .work_list li {
+        /*list 구현했을 때 액자 역할 하는 것=li*/
+        /*(수정)*/
+        width: 25%;
+        /*플롯*/
+        float: left;
+    }
+    .work_section .work_list li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .work_section .work_list li img {
+        /*액자 퍼센트 상관없이 무조건 꽉채움*/
+        width: 100%;
+    }
+    
+    /*3-4. 블로그영역*/
+    .blog_section {
+        /*(수정)*/
+        margin-top: 124px;        
+    }
+    .blog_section .sec_title {
+        /*(수정)*/       
+        margin-bottom: 0;
+        text-align: center;        
+        /*적당히 영역 차지하고 싶으니 주석처리*/
+        /*width: 288px;*/
+        /*플롯*/
+        float: left;
+    }    
+    /*추가, 여기도 해줘야 타이틀이 왼쪽 차지함@*/
+    .blog_section .blog_list {
+        width: 844px;
+        /*(844/1132)*100*/
+        width: 74.5583038869258%;
+        /*플롯*/
+        float: right;
+    }
+    .blog_section .blog_list li {
+        /*(수정)*/
+        margin-top: 0;
+        
+        width: 100%;
+        /*(수정)*/
+        /*
+        844-40(3단이라 마진 20*2)
+        804/3=242.6666666666667
+        */
+        width: 268px;
+        /*(268/844)*100*/
+        width: 31.75355450236967%;
+        margin-left: 20px;
+        /*(20/844)*100*/
+        margin-left: 2.369668246445498%;
+         /*플롯*/
+        float: left;
+    }
+    .blog_section .blog_list li:nth-child(1) {
+        /*추가*/        
+        margin-left: 0;
+    }
+    .blog_section .blog_list li img {
+        width: 100%;
+    }
+    .blog_section .blog_list li time {
+        display: block;
+        font-size: 12px;
+        color: #9e9e9e;
+        margin: 10px 0;
+    }
+    .blog_section .blog_list li h3 {
+        color: #424242;
+        line-height: 1.6;
+    }
+    
+    /*3-5. 연락처작업영역*/
+    .contact_section {
+        /*수정*/
+        margin-top: 180px;
+    }
+    .contact_section .sec_title {
+        /*수정*/
+        margin-bottom: 0;
+        /*
+        text-align: center;
+        width: 288px;
+        */
+        /*플롯*/
+        float: left;
+    }
+    /*input 요소 CSS*/
+    .contact_section .form_box {
+        width: 844px;
+        /*(844/1132)*100*/
+        width: 74.5583038869258%;  
+        float: right;
+    }
+    .contact_section .form_box .form {
+        /*name 등 부분, 왼쪽*/
+        /*844-20(2단이라 마진 1)*/
+        width: 412px;
+        /*(374/844)*100*/
+        width: 48.81516587677725%;
+        
+        margin-right: 20px;
+        /*(20/844)*100*/
+        margin-right: 2.369668246445498%;
+        /*플롯*/
+        float: left;
+    }
+    .contact_section .form_box .txta {
+        /*message 부분, 오른쪽*/
+        /*768-20(2단이라 마진 1)*/
+        width: 374px;
+        /*(374/768)*100*/
+        width: 48.81516587677725%;
+        /*플롯, 너비값 같으니 left해도 ㄱㅊ*/
+        float: right;
+    }
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
